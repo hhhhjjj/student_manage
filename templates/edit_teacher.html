@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑老师信息</title>
+</head>
+<body>
+    <form method="post" action="/edit_teacher.html?teacher_name={{ obj.teacher_name }}">
+        {% csrf_token %}
+        <p>姓名<input type="text" name="teacher_name" value="{{ obj.teacher_name }}"/></p>
+        <p>班级：
+            <select name="teacher_id">
+                {% for row in teacher_list%}
+                    {% if row.teacher_name == obj.teacher_name %}
+                        <option value="{{ row.teacher_name }}" selected="selected">{{ row.teacher_course }}</option>
+                    {% else %}
+                        <option value="{{ row.teacher_name }}">{{ row.teacher_course }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </p>
+        <p><input type="submit" value="提交修改"/></p>
+    </form>
+</body>
+</html>

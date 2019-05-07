@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增加老师</title>
+</head>
+<body>
+     <form action="/add_teacher.html" method="POST">
+        {% csrf_token %}
+         <td>老师名字</td>
+        <input type="text" name="add_teacher_name" />
+        <input type="submit" value="提交" />
+    </form>
+</body>
+</html>

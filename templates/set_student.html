@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+     <form method="post" action="set_student.html?nid={{ teacher_obj.teacher_name }}">
+        {% csrf_token %}
+        <select multiple name="student_name">
+        {% for row in all_student_list %}
+            {% if row in teacher_student_list %}
+                 <option value="{{ row.id }}" selected="selected">{{ row.student_name}}</option>
+            {% else %}
+                 <option value="{{ row.id }}">{{ row.student_name}}</option>
+            {% endif %}
+        {% endfor %}
+        </select>
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>

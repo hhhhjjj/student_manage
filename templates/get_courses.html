@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询课程</title>
+</head>
+<body>
+     <div>
+        <a href="/add_courses.html">添加课程</a>
+    </div>
+    <table>
+            <thead>
+                <tr>
+                    <th>班级名称</th>
+                    <th>课程学生</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                 {% for row in course_list %}
+                    <tr>
+                        <td>
+                            {{ row.course_name }}
+                        </td>
+                        <td>
+                            {{ row.course_student}}
+                        </td>
+                        <td>
+                            {% for item in row.course_student.all %}
+                                <span>{{item.student_name}}</span>
+                            {% endfor %}
+                        </td>
+                        <td>
+                            <a href="/delete_courses.html?nid={{ row.course_name }}">删除</a>
+                            |
+                            <a href="/edit_courses.html?nid={{ row.course_name }}">编辑</a>
+                            |
+                            <a href="/set_student.html?nid={{ row.course_name }}">分配学生</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+    </table>
+</body>
+</html>
