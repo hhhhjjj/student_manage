@@ -12,21 +12,11 @@
                             {{ row.teacher_name }}
                         </td>
                         <td>
-                            {{ row.teacher_course}}
-                        </td>
-                        <td>
-                            {% for item in row.teacher_course.all %}
-                                <span>{{item.student_name}}</span>
-                            {% endfor %}
-                        </td>
-                        <td>
                             <a href="/delete_teacher.html?nid={{ row.teacher_name }}">删除</a>
                             |
-                            <a href="/delete_teacher.html?nid={{ row.teacher_name }}">ajax删除</a>
+                            <a href="/edit_teacher.html?nid={{ row.teacher_name }}">编辑老师</a>
                             |
-                            <a href="/edit_teacher.html?nid={{ row.teacher_name }}">编辑</a>
-                            |
-                            <a href="/set_teacher.html?nid={{ row.teacher_name }}">分配老师</a>
+                            <a href="/set_teacher.html?nid={{ row.teacher_name }}">老师安排课程</a>
                         </td>
                     </tr>
     {% endfor %}

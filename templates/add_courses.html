@@ -8,6 +8,7 @@
      <form action="/add_courses.html" method="POST">
         {% csrf_token %}
         <input type="text" name="add_course_name" />
+         <input type="text" name="add_course_teacher" />
         <input type="submit" value="提交" />
     </form>
 </body>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+     <form method="post" action="set_course.html?nid={{ teacher_obj.teacher_name }}">
+        {% csrf_token %}
+              <td>老师名字</td>
+        <input type="text" name="course_name" />
+        <select multiple name="student_name">
+        {% for row in all_student_list %}
+            <option value="{{ row.id }}">{{ row.student_name}}</option>
+        {% endfor %}
+        </select>
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>

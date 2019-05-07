@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<div><a href="/add_student.html">添加学生</a></div>
+<body>
+    {% for row in student_list %}
+                    <tr>
+                        <td>
+                            {{ row.student_name }}
+                        </td>
+                        <td>
+                            <a href="/delete_student.html?nid={{ row.student_name }}">删除</a>
+                            |
+                            <a href="/edit_student.html?nid={{ row.student_name }}">编辑学生</a>
+                            |
+                            <a href="/edit_student.html?nid={{ row.student_name }}">学生选课</a>
+                        </td>
+                    </tr>
+    {% endfor %}
+</body>
+</html>

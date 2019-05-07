@@ -15,7 +15,8 @@ class Student(models.Model):
 class Course(models.Model):
     course_name = models.CharField(max_length=30)
     course_teacher = models.ForeignKey("Teacher", on_delete=models.CASCADE)
-    # when come NOT NULL constraint failed error,you should delete migration folder
+    # when come NOT NULL constraint failed error,you should check view whether have error
+    # then delete migration folder and django_migrations in databases
     course_student = models.ManyToManyField("Student")
     # one teacher to many course
 
@@ -35,14 +36,4 @@ class Teacher(models.Model):
 
     def __str__(self):
         return self.teacher_name
-
-
-
-
-
-
-
-
-
-
 
