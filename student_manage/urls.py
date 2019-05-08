@@ -27,9 +27,10 @@ urlpatterns = [
     path('edit_teacher.html', edit_teacher),
     path('add_teacher.html', add_teacher),
     path('delete_teacher.html', delete_teacher),
-    path('set_course.html', set_course),
     path('get_student.html', get_student),
-    # path('edit_student.html', edit_student),
+    path('edit_student.html', edit_student),
     path('add_student.html', add_student),
     path('delete_student.html', delete_student),
+    path('set_student.html', set_student),
+    path('', home),
 ]

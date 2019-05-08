@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑学生信息</title>
+</head>
+<body>
+    <form method="post" action="/edit_student.html?student_name={{ obj.student_name }}">
+        {% csrf_token %}
+        <p>姓名<input type="text" name="edit_student_name" value="{{ obj.student_name }}"/></p>
+        <p><input type="submit" value="提交修改"/></p>
+    </form>
+</body>
+</html>

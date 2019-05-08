@@ -6,17 +6,24 @@
 </head>
 <div><a href="/add_teacher.html">添加老师</a></div>
 <body>
-    {% for row in teacher_list %}
+    {% for row, course in course_obj.items %}
                     <tr>
                         <td>
+                            <p>老师：
                             {{ row.teacher_name }}
+                            </p>
+                            <p>课程：
+                            {% for a_course in course %}
+                                {{ a_course.course_name }}
+                            {% endfor %}
+                            </p>
                         </td>
                         <td>
                             <a href="/delete_teacher.html?nid={{ row.teacher_name }}">删除</a>
                             |
                             <a href="/edit_teacher.html?nid={{ row.teacher_name }}">编辑老师</a>
                             |
-                            <a href="/set_teacher.html?nid={{ row.teacher_name }}">老师安排课程</a>
+                            <a href="/add_courses.html?nid={{ row.teacher_name }}">老师安排课程</a>
                         </td>
                     </tr>
     {% endfor %}

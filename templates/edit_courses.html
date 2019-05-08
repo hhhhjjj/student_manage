@@ -5,15 +5,9 @@
     <title>编辑课程</title>
 </head>
 <body>
-    <h3>编辑老师信息</h3>
-    <form method="post" action="/edit_courses.html?nid={{ obj.course_name }}">
+    <form method="post" action="/edit_courses.html?course_name={{ obj.course_name }}">
         {% csrf_token %}
-        <p>课程：
-            <select name="course_name">
-                {% for row in course_list%}
-                {% endfor %}
-            </select>
-        </p>
+        <p>课程名称<input type="text" name="edit_course_name" value="{{ obj.course_name }}"/></p>
         <p><input type="submit" value="提交修改"/></p>
     </form>
 </body>

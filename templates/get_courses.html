@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <title>查询课程</title>
 </head>
+<div><a href="/get_teacher.html">查询老师</a></div>
 <body>
-     <div>
-        <a href="/add_courses.html">添加课程</a>
-    </div>
     <table>
             <thead>
                 <tr>
@@ -21,9 +19,6 @@
                     <tr>
                         <td>
                             {{ row.course_name }}
-                        </td>
-                        <td>
-                            {{ row.course_student}}
                         </td>
                         <td>
                             {% for item in row.course_student.all %}

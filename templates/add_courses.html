@@ -5,10 +5,10 @@
     <title>增加课程</title>
 </head>
 <body>
-     <form action="/add_courses.html" method="POST">
+     <form action="/add_courses.html?nid={{ obj.teacher_name }}" method="POST">
         {% csrf_token %}
+         <td>课程名称</td>
         <input type="text" name="add_course_name" />
-         <input type="text" name="add_course_teacher" />
         <input type="submit" value="提交" />
     </form>
 </body>
